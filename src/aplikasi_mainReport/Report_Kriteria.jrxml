@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1bc5c399-26da-49b9-8bec-3a6bdf9e91dc">
+	<property name="ireport.zoom" value="1.6105100000000079"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="tgl" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     kriteria.`id_kriteria` AS kriteria_id_kriteria,
+     kriteria.`kode_kriteria` AS kriteria_kode_kriteria,
+     kriteria.`nama_kriteria` AS kriteria_nama_kriteria,
+     kriteria.`bobot` AS kriteria_bobot,
+     kriteria.`atribut` AS kriteria_atribut
+FROM
+     `kriteria` kriteria]]>
+	</queryString>
+	<field name="kriteria_kode_kriteria" class="java.lang.String"/>
+	<field name="kriteria_nama_kriteria" class="java.lang.String"/>
+	<field name="kriteria_bobot" class="java.math.BigDecimal"/>
+	<field name="kriteria_atribut" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="61" width="555" height="24" uuid="347c7cfd-ddd1-4028-860e-ffeb8125a3be"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA SISWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="24" width="277" height="38" uuid="bb575b86-149a-4582-81e0-3d5fff8311be"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Jl. Pancasila 02, RT.02/RW.01, Cicadas, Kec. GunungPutri, Kab. Bogor, Prov. Jawa Barat]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="61" width="555" height="1" uuid="b2b4c17e-379b-47bf-ab34-f0e54c3e88f5"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="24" uuid="9784fb70-bc50-4f5e-a75f-0add9645429f"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ SDN 5 CICADAS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="411" y="0" width="143" height="16" forecolor="#FFFFFF" backcolor="#0099FF" uuid="a2009659-00a9-4279-9d6c-5ec05679549a"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#000000"/>
+					<topPen lineWidth="0.5" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Atribut]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="274" y="0" width="138" height="16" forecolor="#FFFFFF" backcolor="#0099FF" uuid="c33df134-4fbe-421c-aaa0-cd26fa422564"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#000000"/>
+					<topPen lineWidth="0.5" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Bobot]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="130" y="0" width="144" height="16" forecolor="#FFFFFF" backcolor="#0099FF" uuid="b2c090ba-9ead-435a-8874-ee35798c739c"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#000000"/>
+					<topPen lineWidth="0.5" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nama Kriteria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="131" height="16" forecolor="#FFFFFF" backcolor="#0099FF" uuid="55153d74-693b-442e-a027-91fa49fe1fe0"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#000000"/>
+					<topPen lineWidth="0.5" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Kode Kriteria]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="131" height="20" uuid="e78390c8-af29-4749-a287-b2971cdc5af0"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{kriteria_kode_kriteria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="0" width="143" height="20" uuid="2a83f730-08dc-4ba5-834a-8e04d8d11d84"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{kriteria_nama_kriteria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="0" width="142" height="20" uuid="cac8d71e-8739-4ed2-a102-87a213416fee"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{kriteria_atribut}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="0" width="138" height="20" uuid="ec6c09b6-b116-4d0b-98dc-a18388add383"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{kriteria_bobot}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="82" splitType="Stretch">
+			<textField>
+				<reportElement x="413" y="0" width="141" height="20" uuid="e5ebc1bb-b5e3-4cd4-8a60-e50c6f653b24"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{tgl}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="413" y="60" width="141" height="20" uuid="aa0b6925-24d5-4559-8852-13aad4efe704"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Lilis Hasana, S.Pd
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="413" y="20" width="141" height="20" uuid="87d771b5-353e-4534-a613-d841227e709d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Kepala Sekolah]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#FFFFFF" backcolor="#0099FF" uuid="1280eec3-7023-4211-91a2-3b58a8b6769a"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="38110e9a-6f67-4417-9c70-36e387fa8c2b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="7e154cd0-a603-489a-a491-43baea08110e"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
